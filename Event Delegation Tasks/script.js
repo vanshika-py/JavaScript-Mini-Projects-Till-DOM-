@@ -10,3 +10,7 @@ Button.addEventListener('click',()=> {
 closeButton.addEventListener('click', ()=>{
 modelcontainer.style.display = 'none'
 });
+
+modelcontainer.addEventListener('click',() =>{
+  console.log("Back")
+})
