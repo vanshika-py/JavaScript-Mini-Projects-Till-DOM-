@@ -1,0 +1,1 @@
+let incBtn = document.querySelector('.increaseBtn');
