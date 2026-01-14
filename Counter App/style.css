@@ -2,108 +2,107 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
+    font-family: sans-serif;
 
 body{
     min-height: 100vh;
+    min-width: 100vw;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-p{
-    font-size: large;
-}
-
-h1{
-    text-align: center;
-    text-decoration: solid;
-    padding: 10px;
-    position: relative;
-    top: 0;
-    bottom: 0;
-    color: white;
-}
-
-h2{
-    position: absolute;
-    bottom: 60%;
-    font-size: 35px;
-    padding: 40px;
+    background-color: black;
 }
 
 .container{
-    display: flex;
-    text-align: center;
-    background-color: black;
+    font-size: 1.2rem;
     width: 100%;
-    max-width: 50%;
-    height: 90vh;
-    margin: 40px auto;
-    display: flex;
-     justify-content: center;
-     align-items: center;
-     
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: rgb(212, 212, 193);
+    border-radius: 30px;
 }
 
-.counter-buttons{
-    display: flex;
-    justify-content: center;
-    border-radius: 15%;
-    background-color: white;
-    width: 30vw;
-    height: 80vh;
+.container h1{
+    color: grey;
+    margin: 20px;
+    padding:0px 0px 20px 0px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.initial-value{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 10px;
-    margin: 40px;
-    -webkit-border-radius: 15%;
-    -moz-border-radius: 15%;
-    -ms-border-radius: 15%;
-    -o-border-radius: 15%;
+    width: 13vw;
+    height: 13vw;
+    border: 25px solid white;
+    border-radius: 50%;
+    color: black;
+    margin: 30px auto;
+    padding: 30px;
+    font-size: 3rem;
+}
+
+
+
+.counter{
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.buttons{
+     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin: 20px;
 }
 
 .increaseBtn{
-    background-color: blue;
-    color: white;
-    font-weight: 500;
-    width: 12%;
-    height: 10%;
-    font-size: 20px;
+    width: clamp(70px, 10vw, 80px);
+    height: clamp(70px, 10vw, 80px);
+    background-color: rgb(202, 233, 244);
+    color: black;
+    font-size: 1rem;
     cursor: pointer;
-    border-radius: 50%;
-    border: 7px solid black;
-    padding: 5px;
-    margin: 20px;
+    border-radius: 30%;
+    border: 14px solid beige;
+    padding: 10px;
 }
 
 .decreaseBtn{
-background-color: blue;
-    color: white;
-    font-weight: 500;
-    width: 12%;
-    height: 10%;
-    font-size: 20px;
+    width: clamp(70px, 10vw, 80px);
+    height: clamp(70px, 10vw, 80px);
+    background-color: rgb(202, 233, 244);
+    color: black;
+    font-size: 1rem;
     cursor: pointer;
-    border-radius: 50%;
-    border: 7px solid black;
-    padding: 5px;
-    margin: 20px;
+    border-radius: 30%;
+    border: 14px solid beige;
+    padding: 10px;
+    -webkit-border-radius: 30%;
+    -moz-border-radius: 30%;
+    -ms-border-radius: 30%;
+    -o-border-radius: 30%;
 }
 
 .resetBtn{
-    background-color: blue;
-    color: white;
-    font-weight: 500;
-    width: 12%;
-    height: 10%;
-    font-size: 20px;
+    width: clamp(70px, 10vw, 80px);
+    height: clamp(70px, 10vw, 80px);
+    background-color: rgb(202, 233, 244);
+    color: black;
+    font-size: 1rem;
     cursor: pointer;
     border-radius: 50%;
-    border: 7px solid black;
-    padding: 5px;
-    margin: 20px;
+    border: 12px solid beige;
+    padding: 10px;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
 }
 
 i{
@@ -123,7 +122,20 @@ i{
     color:rgb(236, 236, 3);
 }
 
+h2{
+    position: absolute;
+    bottom: 60%;
+    font-size: 35px;
+    padding: 40px;
+}
+
+
 h2:hover{
     color: red;
     cursor: pointer;
+}
+
+.details p{
+    padding: 20px;
+    margin: 40px;
 }
