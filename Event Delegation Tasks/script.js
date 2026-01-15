@@ -7,10 +7,10 @@ Button.addEventListener('click',()=> {
   modelcontainer.style.display = 'flex';
 })
 
-closeButton.addEventListener('click', ()=>{
-modelcontainer.style.display = 'none'
-});
 
-modelcontainer.addEventListener('click',() =>{
-  console.log("Back")
-})
+
+modelcontainer.addEventListener('click',(event) =>{
+  if(event.target.className === 'modelcontainer'){
+    modelcontainer.style.display = 'none'
+    }
+  })

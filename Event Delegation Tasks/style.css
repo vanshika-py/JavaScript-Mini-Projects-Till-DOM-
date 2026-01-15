@@ -15,10 +15,6 @@
     padding: 10px 20px;
     font-size: 40px;
     border-radius: 2px;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
-    -ms-border-radius: 2px;
-    -o-border-radius: 2px;
     cursor: pointer;
 }
 
@@ -54,10 +50,6 @@
      cursor: pointer;
      text-shadow: blue;
      border-radius: 6px;
-     -webkit-border-radius: 6px;
-     -moz-border-radius: 6px;
-     -ms-border-radius: 6px;
-     -o-border-radius: 6px;
 }
 
 p{
