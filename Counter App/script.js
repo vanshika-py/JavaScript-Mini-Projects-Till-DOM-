@@ -1,32 +1,39 @@
-
+let initialValue = document.querySelector('.initial-value');
 let increaseButton = document.querySelector('.increaseBtn');
 let decreaseButton = document.querySelector('.decreaseBtn');
+
 let resetButton = document.querySelector('.resetBtn'); 
+let p = document.querySelector('p');
 
-let initialValue = 1;
-
-
+let count = 1;
 
 increaseButton.addEventListener('click', () => {
-    let currentValue = initialValue++;
-    if(currentValue >=10){
-        initialValue = 0;
-    } else{
-        currentValue
+    if(count >= 10){
+        alert("Maximum Limit Reached 🚫")
+    }else {
+        count++;
     }
-    console.log(`Clicked  ${currentValue} times`);
-});
+    initialValue.textContent = count;
+    p.textContent = `Clicked ${count} times 🙂`;
+})
 
 
 
 decreaseButton.addEventListener('click', () => {
-    let currentValue = initialValue++;
-    console.log(`Clicked  ${currentValue} times`);
-});
+  if(count <=  0){
+    alert("Minimum Limit Reached ⚠️")
+     p.textContent = `Clicked ${count} times <span></span>🙂`;
+  } else{
+    count--;
+  }
+  initialValue.textContent = count;
+     p.textContent = `Clicked ${count} times 🙂`;
+})
 
 
-resetButton.addEventListener('click',() =>{
-    increaseButton
-    console.log(`CURRENT VALUE = ${currentValue}`);
-}); 
 
+resetButton.addEventListener('click', () =>{
+    count = 0;
+    initialValue.textContent = 0;
+     p.textContent = "Reset 🔄";
+})
