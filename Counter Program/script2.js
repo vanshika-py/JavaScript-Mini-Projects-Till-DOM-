@@ -16,6 +16,7 @@ increaseButton.addEventListener('click', () => {
        initialValue.textContent = count;
       console.log(temp)
       },500
+
     )} 
 });
 
@@ -32,6 +33,7 @@ resetButton.addEventListener('click',() =>{
     clearInterval(temp)
     count = 0;
     initialValue.textContent = count;
+    temp = null;
 })
     
 

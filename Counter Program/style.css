@@ -66,7 +66,7 @@ body{
     height: clamp(70px, 10vw, 80px);
     background-color: rgb(202, 233, 244);
     color: black;
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     cursor: pointer;
     border-radius: 30%;
     border: 14px solid beige;
@@ -78,7 +78,7 @@ body{
     height: clamp(70px, 10vw, 80px);
     background-color: rgb(202, 233, 244);
     color: black;
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     cursor: pointer;
     border-radius: 30%;
     border: 14px solid beige;
@@ -94,7 +94,7 @@ body{
     height: clamp(70px, 10vw, 80px);
     background-color: rgb(202, 233, 244);
     color: black;
-    font-size: 0.5rem;
+    font-size: 0.8rem;
     cursor: pointer;
     border-radius: 50%;
     border: 12px solid beige;
