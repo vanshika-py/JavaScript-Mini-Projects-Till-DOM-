@@ -15,7 +15,7 @@ increaseButton.addEventListener('click', () => {
       count++;
        initialValue.textContent = count;
       console.log(temp)
-      },1000
+      },500
     )} 
 });
 
