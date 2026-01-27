@@ -6,81 +6,77 @@ let resetButton = document.querySelector('.resetBtn');
 let p = document.querySelector('p');
 
 
-let count = 1;
-let timer = null;
+let count = 0;
+let temp;
 
 increaseButton.addEventListener('click', () => {
-    if (timer !== null) return;           
-    timer = setInterval(() => {
-        count++;
-        initialValue.textContent = count; 
-        p.textContent = "Running";    
-    }, 1000);
-});
-
-resetButton.addEventListener('click', () => {
-    count = 0;                        
-    initialValue.textContent = count;  
-    p.textContent = "Reset 🔄";        
-    clearInterval(timer);             
-    timer = null;                     
+    if(temp == null){
+   temp = setInterval(() => {
+      count++;
+       initialValue.textContent = count;
+      console.log(temp)
+      },1000
+    )} 
 });
 
 
 
+decreaseButton.addEventListener('click', () => {
+    clearInterval(temp)
+    initialValue.textContent =  count;
+    temp = null;
+}
+)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.
-
-
-
-
-
-
-
-
-
-resetButton.addEventListener('click', () =>{
+resetButton.addEventListener('click',() =>{
+    clearInterval(temp)
     count = 0;
-    initialValue.textContent = 0;
-     p.textContent = "Reset 🔄";
+    initialValue.textContent = count;
 })
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

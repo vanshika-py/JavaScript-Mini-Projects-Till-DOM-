@@ -32,6 +32,7 @@ decreaseButton.addEventListener('click', () => {
 
 
 
+
 resetButton.addEventListener('click', () =>{
     count = 0;
     initialValue.textContent = 0;
