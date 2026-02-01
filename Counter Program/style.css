@@ -135,7 +135,13 @@ h2:hover{
     cursor: pointer;
 }
 
+
 .details p{
     padding: 20px;
     margin: 40px;
+}
+
+
+.hours{
+    background-color: red;
 }
