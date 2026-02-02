@@ -9,11 +9,11 @@
     background-image: url(https://png.pngtree.com/thumb_back/fh260/background/20231219/pngtree-colorful-study-desktop-simple-background-for-the-beginning-of-school-season-image_15522740.png);
     height: 100%;
     width: 100%;
-    max-height: 100%;
     max-width: 800px;
     text-align: center;
     font-size: 20px;
-    margin: 50px auto;
+    margin: 120px auto;
+    
 }
 
 .Counter-heading{
@@ -41,3 +41,9 @@
     display: flex;
 }
 
+.buttons{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 80px;
+}
