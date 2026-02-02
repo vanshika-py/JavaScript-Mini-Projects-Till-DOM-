@@ -21,7 +21,6 @@ increaseButton.addEventListener('click', () => {
 });
 
 
-
 decreaseButton.addEventListener('click', () => {
     clearInterval(temp)
     initialValue.textContent =  count;
