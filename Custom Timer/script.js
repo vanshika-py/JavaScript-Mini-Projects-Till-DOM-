@@ -1,5 +1,7 @@
 let timer = document.querySelector('.timer');
-let hours = document.querySelector('.hours');
-let minutes  = document.querySelector('.minutes');
-let seconds = document.querySelector('seconds');
+let start = document.querySelector('.start');
+let pause = document.querySelector('.pause');
+let reset = document.querySelector('.reset');
 let text = document.querySelector('.text');
+
+
