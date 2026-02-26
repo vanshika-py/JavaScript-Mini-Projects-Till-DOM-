@@ -245,7 +245,7 @@
             <button class="btn" onclick="resetGame()">New Game (Reset Names)</button>
         </div>
 
-        <!-- Winner Popup -->
+
         <div id="winner-modal" class="winner-modal">
             <div class="winner-emoji">🏆</div>
             <div class="winner-text" id="winner-message"></div>
@@ -254,12 +254,12 @@
     </div>
 
     <script>
-        // --- JAVASCRIPT LOGIC --- //
+        // --- JAVASCRIPT --- //
 
-        // Game State Variables (Decoupled from the DOM for accuracy)
+        
         let boardState = ["", "", "", "", "", "", "", "", ""];
         let currentPlayer = "X"; 
-        let gameActive = false; // Locks the board when someone wins
+        let gameActive = false; // 
         
         // Players & Score
         let p1Name = "Player X";
@@ -267,14 +267,14 @@
         let scoreX = 0;
         let scoreO = 0;
         
-        // Winning combinations (indices)
+        
         const WINNING_COMBINATIONS = [
-            [0, 1, 2], [3, 4, 5], [6, 7, 8], // Horizontal
-            [0, 3, 6], [1, 4, 7], [2, 5, 8], // Vertical
-            [0, 4, 8], [2, 4, 6]             // Diagonal
+            [0, 1, 2], [3, 4, 5], [6, 7, 8], 
+            [0, 3, 6], [1, 4, 7], [2, 5, 8],
+            [0, 4, 8], [2, 4, 6]             
         ];
 
-        // Select Elements
+    
         const startScreen = document.getElementById('start-screen');
         const gameArea = document.getElementById('game-area');
         const cellElements = document.querySelectorAll('[data-cell]');
@@ -286,13 +286,13 @@
         const winnerModal = document.getElementById('winner-modal');
         const winnerMessage = document.getElementById('winner-message');
 
-        // Attach listeners exactly once using data-index
+    
         cellElements.forEach((cell, index) => {
             cell.setAttribute('data-index', index);
             cell.addEventListener('click', handleClick);
         });
 
-        // Start Game
+    
         function startGame() {
             const p1Input = document.getElementById('playerX').value.trim();
             const p2Input = document.getElementById('playerO').value.trim();
@@ -310,39 +310,36 @@
             updateTurnMessage();
         }
 
-        // Handle Clicks Safely
+
         function handleClick(e) {
             const cell = e.target;
             const index = cell.getAttribute('data-index');
 
-            // Prevent clicking on already filled cells OR if game is over
+    
             if (boardState[index] !== "" || !gameActive) return;
 
-            // 1. Place Mark securely in logic & DOM
             boardState[index] = currentPlayer;
             const currentClass = currentPlayer === "X" ? "x" : "o";
             cell.classList.add(currentClass);
             cell.textContent = currentPlayer;
 
-            // 2. Check for Win or Draw
             if (checkWin()) {
                 endGame(false);
             } else if (isDraw()) {
                 endGame(true);
             } else {
-                // 3. Swap Turns
                 currentPlayer = currentPlayer === "X" ? "O" : "X";
                 updateTurnMessage();
             }
         }
 
-        // Visual Turn Indication
+        
         function updateTurnMessage() {
             statusText.textContent = `${currentPlayer === "X" ? p1Name : p2Name}'s Turn`;
             statusText.style.color = currentPlayer === "X" ? 'var(--x-color)' : 'var(--o-color)';
         }
 
-        // Winning Logic reading purely from the array
+        
         function checkWin() {
             return WINNING_COMBINATIONS.some(combination => {
                 return combination.every(index => {
@@ -351,14 +348,14 @@
             });
         }
 
-        // Draw Logic
+
         function isDraw() {
             return !boardState.includes("");
         }
 
-        // End Game & Show Result
+     
         function endGame(draw) {
-            gameActive = false; // Prevents any clicks during animations
+            gameActive = false; 
 
             if (draw) {
                 winnerMessage.innerText = "It's a Draw! 🤝";
@@ -377,7 +374,7 @@
             winnerModal.classList.add('active');
         }
 
-        // Restart Match without reloading Event Listeners
+      
         function restartMatch() {
             winnerModal.classList.remove('active');
             
@@ -396,7 +393,7 @@
             setTimeout(updateTurnMessage, 800);
         }
 
-        // Full Game Reset
+    
         function resetGame() {
             // Reset logic vars
             scoreX = 0;
@@ -408,7 +405,6 @@
             document.getElementById('playerX').value = "";
             document.getElementById('playerO').value = "";
 
-            // UI Reset
             gameArea.style.display = 'none';
             startScreen.classList.remove('hidden');
             winnerModal.classList.remove('active');
