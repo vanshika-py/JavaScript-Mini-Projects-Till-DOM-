@@ -4,71 +4,245 @@
     box-sizing: border-box;
 }
 
+body{
+   background: linear-gradient(135deg, #ec88da, #d32f9d, #c3a271);
+}
 
 .container{
-    background-color: black;
     color: white;
-    height: 100%;
-    width: 100%;
-    max-height: 1000px;
+    border: 7px solid white;
+    width: 90%;
     max-width: 700px;
+    margin: 80px auto;
+    padding: 40px 20px;
     text-align: center;
     font-size: 20px;
-    margin: 80px auto;
-    border-radius: 5%;
-    -webkit-border-radius: 5%;
-    -moz-border-radius: 5%;
-    -ms-border-radius: 5%;
-    -o-border-radius: 5%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
 }
+
 
 
 h1{
-    padding: 20px;
     color: white;
+    text-transform: capitalize;
 }
 
-.Counter-heading{
+p{
     color: white;
+   font-size: larger;
+   margin: 20px;
 }
 
-.timer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 30px;
-    margin: 10px;
-    padding: 60px;
+
+
+.timer {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 10px;
+   padding: 30px;
 }
+
+
+.hours, .minutes, .seconds {
+   width: 90px;
+   aspect-ratio: 1 / 1;
+   border: 5px solid white;
+   border-radius: 9px;
+   margin: 0 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 32px;
+   font-weight: bold;
+}
+
 
 .details{
-    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
     font-size: 25px;
+    gap: 40px;
 }
 
 .text{
     display: flex;
+    padding-bottom: 40px;
+ 
 }
 
-.buttons{
+
+
+.Start{
+    background-color: rgb(61, 118, 61);
+    color: rgb(58, 58, 231);
+    font-weight: bold;
+    cursor: pointer;
+     transition: all 0.2s ease;
+    background-color: rgb(147, 180, 147);
+     padding: 14px 24px;
+    border: 5px solid white;
+    border-radius: 9px;
+    margin: 0px 20px 0px 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.Start:hover{
+    background-color: rgb(72, 154, 72)
+}
+
+.Pause{
+    background-color: rgb(227, 227, 125);
+    font-weight: bold;
+    color: rgb(58, 58, 231);
+     padding: 14px 24px;
+    border: 5px solid white;
+    border-radius: 9px;
+    margin: 0px 20px 0px 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.Reset{
+    background-color: rgb(237, 159, 159);
+     color: rgb(58,58,231);
+     font-weight: bold;
+     padding: 14px 24px;
+    border: 5px solid white;
+    border-radius: 9px;
+    margin: 0px 20px 0px 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+*{
+    margin : 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   background: linear-gradient(135deg, #ec88da, #d32f9d, #c3a271);
+}
+
+.container{
+    color: white;
+    border: 7px solid white;
+    width: 90%;
+    max-width: 700px;
+    margin: 80px auto;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+
+h1{
+    color: white;
+    text-transform: capitalize;
+}
+
+p{
+    color: white;
+   font-size: larger;
+   margin: 20px;
+}
+
+
+
+.timer {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 10px;
+   padding: 30px;
+}
+
+
+.hours, .minutes, .seconds {
+   width: 90px;
+   aspect-ratio: 1 / 1;
+   border: 5px solid white;
+   border-radius: 9px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 32px;
+   font-weight: bold;
+}
+
+
+.details{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 40px 40px 40px 40px;
-    cursor: pointer;
+    font-size: 25px;
+    gap: 40px;
 }
 
-.buttons i{
-    border: 2px solid white;
-    height: 40%;
-    color : white;
-    padding: 5px;
-    font-size: 20px;
-    margin: 15px;
-    text-align: center;
-    padding-bottom: 80px;
+.text{
+    display: flex;
+    padding-bottom: 40px;
+
+}
+
+
+
+.buttons {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 20px;
+
+}
+
+.Start{
+    background-color: rgb(61, 118, 61);
+    color: rgb(58, 58, 231);
+    font-weight: bold;
+    cursor: pointer;
+     transition: all 0.2s ease;
+    background-color: rgb(147, 180, 147);
+     padding: 18px 30px 18px 30px;
+    border: 5px solid white;
+    border-radius: 9px;
+    margin: 0px 20px 0px 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.Start:hover{
+    background-color: rgb(72, 154, 72)
+}
+
+.Pause{
+    background-color: rgb(227, 227, 125);
+    font-weight: bold;
+    color: rgb(58, 58, 231);
+     padding: 18px 30px 18px 30px;
+    border: 5px solid white;
+    border-radius: 9px;
+    margin: 0px 20px 0px 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.Pause:hover{
+    background-color: rgb(132, 132, 26);
+}
+
+.Reset{
+    background-color: rgb(237, 159, 159);
+     color: rgb(58,58,231);
+     font-weight: bold;
+     padding: 18px 30px 18px 30PX;
+    border: 5px solid white;
+    border-radius: 9px;
+    margin: 0px 20px 0px 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+
+.Reset:hover{
+    background-color: rgb(182, 50, 50);
 }
