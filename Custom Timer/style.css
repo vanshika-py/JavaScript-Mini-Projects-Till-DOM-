@@ -14,9 +14,10 @@ body{
 
 .container{
     color: white;
+     box-sizing: border-box;
     border: 7px solid white;
     width: min(90%, 700px);
-    margin: 40px auto;
+    margin: 0;
     padding: 40px 20px;
     text-align: center;
     font-size: clamp(1rem, 2.5vw, 1.2rem);
@@ -60,8 +61,8 @@ p{
    justify-content: center;
    align-items: center;
    font-weight: bold;
-   width: min(22vw, 100px);
-font-size: clamp(1.2rem, 5vw, 2rem);
+   flex: 1 1 80px;
+   max-width: 100px;
 }
 
 
