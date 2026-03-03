@@ -29,8 +29,6 @@ body{
    flex-wrap: wrap;
    justify-content: center;
    gap: 20px;
-   flex: 1 1 0;
-   min-width: 0;
 }
 
 
