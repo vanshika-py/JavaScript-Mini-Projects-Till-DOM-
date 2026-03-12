@@ -4,6 +4,44 @@
     box-sizing: border-box;
 }
 
+body{
+    background-color: white;
+}
+
 .container{
-    
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   background-image: url(image.png);
+   background-repeat: no-repeat;
+   width: 80%;
+   max-width: 500px;
+   object-fit: contain;
+   margin: 40px auto;
+   border: 2px solid black;
+   border-radius: 10px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+}
+
+h1{
+    text-align: center;
+    padding: 20px;
+}
+
+.search-city{
+    padding: 10px 20px 10px 20px;
+    border: 2px solid white;
+    border-radius: 6px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.submit{
+    padding: 6px;
+    font-weight: 700;
+    border-radius: 5px;
 }
