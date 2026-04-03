@@ -6,8 +6,6 @@ let Weather= document.querySelector('.Weather-icon');
 let details = document.querySelector('.description');
 
 
-
-
 const api_key = "ea8b021707ea9cab1d6c61024be7a521";
 
 submitBtn.addEventListener('click',()=>{
@@ -16,13 +14,7 @@ submitBtn.addEventListener('click',()=>{
         const url  = fetch(`http://api.weatherstack.com/current?access_key=ea8b021707ea9cab1d6c61024be7a521&query= ${userInput}`)
     .then(response => response.json())
     .then(data =>{
-      temperature.textContent = data.current.temperature;
-      cityName.textContent = data.current.cityName;
-      Weather.textContent = data.current.Weather-isSecureContext;
+      
       
     })
-    
-
-
-})
 
