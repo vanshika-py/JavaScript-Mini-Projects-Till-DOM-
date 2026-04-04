@@ -10,6 +10,7 @@ submitBtn.addEventListener('click',()=>{
      const api = fetch(`http://api.weatherapi.com/v1/current.json?key=${api_key}&q=${city}`)
      .then(Response => Response.json())
      .then (data => {
+    
         console.log(data)
      })
     })
