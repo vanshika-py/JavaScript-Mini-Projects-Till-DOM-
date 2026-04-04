@@ -1,20 +1,13 @@
-let city = document.querySelector('.inputCity');
-let submitBtn = document.querySelector('.submit');
-let cityName = document.querySelector('.city-name');
-let temperature = document.querySelector('.temperature');
-let Weather= document.querySelector('.Weather-icon');
-let details = document.querySelector('.description');
+let userInput= document.querySelector('.InputCity');
+let submitBtn = document.querySelector('.Submit');
 
 
-const api_key = "ea8b021707ea9cab1d6c61024be7a521";
+const api_key = "aac679675fda466dab4131950260404";
 
 submitBtn.addEventListener('click',()=>{
-    const userInput = city.value.trim();
-    if(userInput != ""){
-        const url  = fetch(`http://api.weatherstack.com/current?access_key=ea8b021707ea9cab1d6c61024be7a521&query= ${userInput}`)
-    .then(response => response.json())
-    .then(data =>{
-      
-      
+     const city = userInput.value.trim()
+     if(city != ""){
+     const api = fetch(`http://api.weatherapi.com/v1/current.json?key=${api_key}&q=mumbai`)
     })
 
+  const api = fetch(`http://api.weatherapi.com/v1/current.json?key=aac679675fda466dab4131950260404&q=delhi`)
