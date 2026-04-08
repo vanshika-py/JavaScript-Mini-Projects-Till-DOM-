@@ -4,13 +4,13 @@ const errorMessage = document.querySelector(".error-message");
 
 const cityName = document.querySelector(".city-name");
 const temperature = document.querySelector(".temperature");
-const condition = document.querySelector(".condition");
+
 const icon = document.querySelector(".weather-icon");
 
 const humidity = document.querySelector(".humidity");
 const wind = document.querySelector(".wind");
 const feels = document.querySelector(".feels");
-const visibility = document.querySelector(".visibility");
+
 
 const api_key = "aac679675fda466dab4131950260404";
 
@@ -32,15 +32,13 @@ submit.addEventListener("click", () => {
             errorMessage.innerText = "";
 
             cityName.innerText = data.location.name;
-            temperature.innerText = data.current.temp_c + "°C";
-            condition.innerText = data.current.condition.text;
-
+            temperature.innerText = (data.current.temp_c ?? "--") + " °C";
             icon.innerHTML = `<img src="${data.current.condition.icon}">`;
 
             humidity.innerText = data.current.humidity + "%";
             wind.innerText = data.current.wind_kph + " km/h";
             feels.innerText = data.current.feelslike_c + "°C";
-            visibility.innerText = data.current.vis_km + " km";
+
 
         })
         .catch(() => {
@@ -56,12 +54,12 @@ inputCity.addEventListener("input", () => {
         cityName.innerText = "";
         temperature.innerText = "";
         condition.innerText = "";
-        icon.innerHTML = "";
+        icon.innerText = "";
 
         humidity.innerText = "";
         wind.innerText = "";
         feels.innerText = "";
-        visibility.innerText = "";
+    
 
         errorMessage.innerText = "";
     }

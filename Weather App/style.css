@@ -11,7 +11,6 @@ display:flex;
 justify-content:center;
 align-items:center;
 padding:20px;
-
 background:linear-gradient(135deg,#667eea,#764ba2,#ff9a9e);
 background-size:300% 300%;
 animation:bgmove 10s ease infinite;
@@ -26,6 +25,7 @@ animation:bgmove 10s ease infinite;
 .header{
 width:90%;
 max-width:600px;
+min-height:520px;
 
 background:rgba(255,255,255,0.15);
 backdrop-filter:blur(12px);
@@ -40,14 +40,15 @@ box-shadow:0 15px 35px rgba(0,0,0,0.25);
 
 h1{
 margin-bottom:20px;
-font-size:28px;
+font-size:30px;
 letter-spacing:1px;
+font-weight:900;
 }
 
 .Search-Section{
 display:flex;
 gap:10px;
-margin-bottom:25px;
+margin-bottom:20px;
 }
 
 .inputCity{
@@ -90,7 +91,7 @@ box-shadow:0 4px 10px rgba(0,0,0,0.3);
 }
 
 .Temperature-details{
-margin-bottom:25px;
+margin-bottom:20px;
 min-height:160px;
 }
 
@@ -119,6 +120,7 @@ opacity:0.9;
 display:grid;
 grid-template-columns:1fr 1fr;
 gap:12px;
+min-height:200px;
 }
 
 .card{
@@ -159,6 +161,15 @@ box-shadow:0 12px 25px rgba(0,0,0,0.35);
 transform:scale(0.97);
 }
 
+.card p{
+font-size:14px;
+}
+
+.card span{
+font-size:22px;
+font-weight:bold;
+}
+
 .error-message{
 color:#ff4d4d;
 font-size:14px;
@@ -169,7 +180,27 @@ font-weight:bold;
 min-height:18px;
 }
 
+/* Tablet */
+
+@media (max-width:768px){
+
+.temperature{
+font-size:42px;
+}
+
+}
+
+/* Mobile */
+
 @media (max-width:500px){
+
+.Search-Section{
+flex-direction:column;
+}
+
+.submit{
+width:100%;
+}
 
 .cards{
 grid-template-columns:1fr;
