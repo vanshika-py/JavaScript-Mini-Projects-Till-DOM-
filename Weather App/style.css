@@ -13,15 +13,16 @@
 
 body {
     min-height: 100vh;
+    min-height: 100dvh; 
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 15px;
     background: linear-gradient(135deg, #4facfe, #8e44ad, #ff9a9e);
     background-size: 300% 300%;
     animation: gradientMove 12s ease infinite;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 @keyframes gradientMove {
@@ -32,33 +33,33 @@ body {
 
 .header {
     width: 100%;
-    max-width: 450px; 
-    min-height: 650px; 
+    max-width: 480px;
+    height: auto;
+    max-height: 95vh;
     background: var(--glass-bg);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    padding: clamp(20px, 6vw, 35px);
-    border-radius: 28px;
+    padding: clamp(15px, 5vw, 30px);
+    border-radius: clamp(20px, 5vw, 30px);
     color: var(--text-color);
-    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
     border: 1px solid var(--glass-border);
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: 20px;
+    gap: clamp(10px, 3vh, 20px);
+    overflow-y: auto;
 }
 
 h1 {
     text-align: center;
-    font-size: clamp(20px, 5vw, 26px);
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
     font-weight: 700;
-    letter-spacing: 0.5px;
 }
 
 .Search-Section {
     display: flex;
-    gap: 10px;
-    height: 50px;
+    gap: 8px;
+    min-height: 45px;
 }
 
 .inputCity {
@@ -69,82 +70,74 @@ h1 {
     font-size: 16px;
     outline: none;
     background: rgba(255, 255, 255, 0.9);
+    width: 100%;
 }
 
 .submit {
-    width: 50px;
+    padding: 0 18px;
     border: none;
     border-radius: 12px;
     cursor: pointer;
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
     color: white;
-    font-size: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-weight: bold;
     transition: 0.3s;
-}
-
-.submit:hover {
-    transform: scale(1.05);
 }
 
 .Temperature-details {
     text-align: center;
-    flex-grow: 1;
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
 .city-name {
-    font-size: clamp(22px, 5vw, 30px);
+    font-size: clamp(1.2rem, 5vw, 1.8rem);
     font-weight: 600;
 }
 
 .temperature {
-    font-size: clamp(60px, 15vw, 90px);
+    font-size: clamp(3.5rem, 15vw, 5.5rem);
     font-weight: 800;
-    margin: 10px 0;
+    line-height: 1;
+    margin: 5px 0;
 }
 
 .Weather-icon img {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
+    width: clamp(80px, 20vw, 120px);
+    height: auto;
 }
 
 .details-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: clamp(10px, 3vw, 15px);
     width: 100%;
 }
 
 .card {
-    aspect-ratio: 1 / 1; 
-    padding: 15px;
+    padding: clamp(10px, 3vw, 20px);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .card span:first-child {
-    font-size: 0.85rem;
+    font-size: clamp(0.7rem, 2.5vw, 0.85rem);
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
     opacity: 0.8;
 }
 
 .card span:last-child {
-    font-size: 1.2rem;
+    font-size: clamp(0.9rem, 3.5vw, 1.2rem);
     font-weight: 700;
 }
 
@@ -153,49 +146,51 @@ h1 {
 .card:nth-of-type(3) { background: linear-gradient(135deg, #ff6a00, #ee0979); }
 .card:nth-of-type(4) { background: linear-gradient(135deg, #56ccf2, #2f80ed); }
 
-.card:hover {
-    transform: translateY(-5px);
-}
-
 .error-message {
-    color: #ff4d4d;
+    color: #ffcccc;
     text-align: center;
-    font-size: 14px;
+    font-size: 13px;
     font-weight: 600;
-    height: 20px;
+    min-height: 18px;
 }
 
-@media (max-width: 370px) {
+@media (max-width: 400px) {
     .header {
         padding: 15px;
-        min-height: auto;
+        gap: 15px;
     }
+    
+    .temperature {
+        margin: 0;
+    }
+
     .details-container {
-        gap: 10px;
-    }
-    .card span:last-child {
-        font-size: 1rem;
+        gap: 8px;
     }
 }
 
-@media (min-width: 768px) {
+@media (max-height: 700px) {
+    .header {
+        justify-content: flex-start;
+    }
+    .temperature {
+        font-size: clamp(3rem, 10vw, 4rem);
+    }
+    .Weather-icon img {
+        width: 70px;
+    }
+}
+
+@media (min-width: 1024px) {
     .header {
         max-width: 500px;
-        min-height: 700px;
     }
-}
-
-@media (max-height: 600px) {
-    body {
-        align-items: flex-start;
-    }
-    .header {
-        min-height: auto;
-        margin-top: 20px;
+    .card:hover {
+        transform: translateY(-5px);
+        transition: 0.3s ease;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
     body { animation: none; }
-    .card:hover, .submit:hover { transform: none; }
 }
