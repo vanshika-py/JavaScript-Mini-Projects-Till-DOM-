@@ -1,56 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather App</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Weather App</title>
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
 </head>
+
 <body>
-    
-  
-   <div class="header">
-      <h1>Weather App</h1>
 
-      <div class="Search-Section">
-      <input type="text" placeholder="Search City Name" class="inputCity">
-            <button class="submit">Submit</button>
-      </div>
+<div class="header">
 
-      <p class="error-message"></p>
+<h1>Weather App</h1>
 
-      
-      <div class="Temperature-details">
-        <div class="city-name"></div>
-        <div class="temperature"></div>
-        <div class="Weather-icon"></div>
-        <div class="Weather-condition"></div>
-      </div>
+<div class="Search-Section">
+<input type="text" placeholder="Search City Name" class="inputCity">
+<button class="submit">Submit</button>
+</div>
 
+<p class="error-message"></p>
 
-      <div class="card">
-     <h3>Humidity</h3>
-     <p class="humidity"></p>
-  </div>
+<div class="Temperature-details">
+<div class="city-name"></div>
+<div class="temperature"></div>
+<div class="weather-icon"></div>
+<div class="condition"></div>
+</div>
 
-   <div class="card">
-     <h3>Wind</h3>
-     <p class="wind-speed"></p>
-  </div>
+<div class="cards">
 
-  <div class="card">
-     <h3>Feels Like</h3>
-     <p class="feels-like"></p>
-  </div>
+<div class="card">
+<h3><i class="fa-solid fa-droplet"></i> Humidity</h3>
+<p class="humidity"></p>
+</div>
 
-  <div class="card">
-     <h3>Visibility</h3>
-     <p class="visibility"></p>
-  </div>
+<div class="card">
+<h3><i class="fa-solid fa-wind"></i> Wind</h3>
+<p class="wind"></p>
+</div>
 
-   </div>
+<div class="card">
+<h3><i class="fa-solid fa-temperature-three-quarters"></i> Feels Like</h3>
+<p class="feels"></p>
+</div>
 
-   <script src="script.js"></script>
+<div class="card">
+<h3><i class="fa-solid fa-eye"></i> Visibility</h3>
+<p class="visibility"></p>
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
 </html>

@@ -1,68 +1,52 @@
-const inputCity = document.querySelector(".inputCity")
-const submit = document.querySelector(".submit")
+const inputCity = document.querySelector(".inputCity");
+const submit = document.querySelector(".submit");
+const errorMessage = document.querySelector(".error-message");
 
-const cityName = document.querySelector(".city-name")
-const temperature = document.querySelector(".temperature")
-const condition = document.querySelector(".condition")
-const icon = document.querySelector(".weather-icon")
+const cityName = document.querySelector(".city-name");
+const temperature = document.querySelector(".temperature");
+const condition = document.querySelector(".condition");
+const icon = document.querySelector(".weather-icon");
 
-const humidity = document.querySelector(".humidity")
-const wind = document.querySelector(".wind")
-const feels = document.querySelector(".feels")
-const visibility = document.querySelector(".visibility")
-
-const errorMessage = document.querySelector(".error-message")
+const humidity = document.querySelector(".humidity");
+const wind = document.querySelector(".wind");
+const feels = document.querySelector(".feels");
+const visibility = document.querySelector(".visibility");
 
 const api_key = "aac679675fda466dab4131950260404";
 
-submit.addEventListener("click", ()=>{
+submit.addEventListener("click", () => {
 
-const city = inputCity.value.trim()
+    const city = inputCity.value.trim();
 
-if(city === ""){
-errorMessage.innerText = "Enter city name"
-return
-}
+    if (city === "") {
+        errorMessage.innerText = "Enter city name";
+        return;
+    }
 
-errorMessage.innerText = "Loading..."
+    errorMessage.innerText = "Loading...";
 
-fetch(`http://api.weatherapi.com/v1/current.json?key=${api_key}&q=${city}`)
+    fetch(`https://api.weatherapi.com/v1/current.json?key=${api_key}&q=${city}`)
+        .then(res => res.json())
+        .then(data => {
 
-.then(response => {
+            errorMessage.innerText = "";
 
-if(!response.ok){
-throw new Error("City not found")
-}
+            cityName.innerText = data.location.name;
+            temperature.innerText = data.current.temp_c + "°C";
+            condition.innerText = data.current.condition.text;
 
-return response.json()
+            icon.innerHTML = `<img src="${data.current.condition.icon}">`;
 
-})
+            humidity.innerText = data.current.humidity + "%";
+            wind.innerText = data.current.wind_kph + " km/h";
+            feels.innerText = data.current.feelslike_c + "°C";
+            visibility.innerText = data.current.vis_km + " km";
+        })
+        .catch(() => {
+            errorMessage.innerText = "City not found";
+        });
 
-.then(data => {
-
-errorMessage.innerText = ""
-
-cityName.innerText = data.location.name
-temperature.innerText = data.current.temp_c + "°C"
-condition.innerText = data.current.condition.text
-
-icon.innerHTML = `<img src="${data.current.condition.icon}">`
-
-humidity.innerText = data.current.humidity + "%"
-wind.innerText = data.current.wind_kph + " km/h"
-feels.innerText = data.current.feelslike_c + "°C"
-visibility.innerText = (data.current.vis_km || "N/A") + " km"
-
-})
-
-.catch(error => {
-
-errorMessage.innerText = "⚠️ City not found"
-
-})
-
-})
-
+});
 
 
 
