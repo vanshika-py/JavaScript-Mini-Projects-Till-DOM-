@@ -41,12 +41,34 @@ submit.addEventListener("click", () => {
             wind.innerText = data.current.wind_kph + " km/h";
             feels.innerText = data.current.feelslike_c + "°C";
             visibility.innerText = data.current.vis_km + " km";
+
         })
         .catch(() => {
             errorMessage.innerText = "City not found";
         });
 
 });
+
+inputCity.addEventListener("input", () => {
+
+    if (inputCity.value.trim() === "") {
+
+        cityName.innerText = "";
+        temperature.innerText = "";
+        condition.innerText = "";
+        icon.innerHTML = "";
+
+        humidity.innerText = "";
+        wind.innerText = "";
+        feels.innerText = "";
+        visibility.innerText = "";
+
+        errorMessage.innerText = "";
+    }
+
+});
+
+
 
 
 
