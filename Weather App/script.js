@@ -13,7 +13,7 @@ const visibility = document.querySelector(".visibility")
 
 const errorMessage = document.querySelector(".error-message")
 
-const api_key = "YOUR_API_KEY"
+const api_key = "aac679675fda466dab4131950260404";
 
 submit.addEventListener("click", ()=>{
 
@@ -62,7 +62,6 @@ errorMessage.innerText = "⚠️ City not found"
 })
 
 })
-
 
 
 
