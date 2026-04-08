@@ -1,168 +1,201 @@
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 }
 
-body{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:20px;
-
-background:linear-gradient(135deg,#4facfe,#8e44ad,#ff9a9e);
-background-size:300% 300%;
-animation:gradientMove 12s ease infinite;
+:root {
+    --glass-bg: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --text-color: #ffffff;
 }
 
-@keyframes gradientMove{
-0%{background-position:0% 50%;}
-50%{background-position:100% 50%;}
-100%{background-position:0% 50%;}
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(135deg, #4facfe, #8e44ad, #ff9a9e);
+    background-size: 300% 300%;
+    animation: gradientMove 12s ease infinite;
+    overflow-x: hidden;
 }
 
-.header{
-width:100%;
-max-width:520px;
-
-background:rgba(255,255,255,0.15);
-backdrop-filter:blur(14px);
-
-padding:30px;
-border-radius:20px;
-
-color:white;
-
-box-shadow:0 20px 45px rgba(0,0,0,0.35);
-
-display:grid;
-gap:14px;
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
-h1{
-text-align:center;
-font-size:28px;
-letter-spacing:1px;
+.header {
+    width: 100%;
+    max-width: 450px; 
+    min-height: 650px; 
+    background: var(--glass-bg);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: clamp(20px, 6vw, 35px);
+    border-radius: 28px;
+    color: var(--text-color);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
 }
 
-.Search-Section{
-display:flex;
-gap:10px;
+h1 {
+    text-align: center;
+    font-size: clamp(20px, 5vw, 26px);
+    font-weight: 700;
+    letter-spacing: 0.5px;
 }
 
-.inputCity{
-flex:1;
-padding:12px 14px;
-border:none;
-border-radius:10px;
-font-size:16px;
-outline:none;
-
-background:white;
+.Search-Section {
+    display: flex;
+    gap: 10px;
+    height: 50px;
 }
 
-.submit{
-padding:12px 16px;
-border:none;
-border-radius:10px;
-cursor:pointer;
-
-font-weight:bold;
-color:white;
-
-background:linear-gradient(135deg,#ff7e5f,#feb47b);
-
-transition:0.3s;
+.inputCity {
+    flex: 1;
+    padding: 0 15px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.9);
 }
 
-.submit:hover{
-transform:scale(1.05);
-box-shadow:0 8px 18px rgba(0,0,0,0.3);
+.submit {
+    width: 50px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    color: white;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
 }
 
-.Temperature-details{
-text-align:center;
-padding:10px 0;
+.submit:hover {
+    transform: scale(1.05);
 }
 
-.city-name{
-font-size:24px;
-font-weight:bold;
+.Temperature-details {
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.temperature{
-font-size:48px;
-margin:8px 0;
-font-weight:bold;
+.city-name {
+    font-size: clamp(22px, 5vw, 30px);
+    font-weight: 600;
 }
 
-.Weather-icon img{
-width:80px;
+.temperature {
+    font-size: clamp(60px, 15vw, 90px);
+    font-weight: 800;
+    margin: 10px 0;
 }
 
-.Weather-condition{
-font-size:18px;
-opacity:0.9;
+.Weather-icon img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
 }
 
-.card{
-padding:16px;
-border-radius:14px;
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-color:white;
-font-weight:500;
-
-box-shadow:0 10px 25px rgba(0,0,0,0.3);
-
-transition:0.3s;
+.details-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    width: 100%;
 }
 
-.card:nth-of-type(1){
-background:linear-gradient(135deg,#00c6ff,#0072ff);
+.card {
+    aspect-ratio: 1 / 1; 
+    padding: 15px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.card:nth-of-type(2){
-background:linear-gradient(135deg,#f7971e,#ffd200);
+.card span:first-child {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    opacity: 0.8;
 }
 
-.card:nth-of-type(3){
-background:linear-gradient(135deg,#ff6a00,#ee0979);
+.card span:last-child {
+    font-size: 1.2rem;
+    font-weight: 700;
 }
 
-.card:nth-of-type(4){
-background:linear-gradient(135deg,#56ccf2,#2f80ed);
+.card:nth-of-type(1) { background: linear-gradient(135deg, #00c6ff, #0072ff); }
+.card:nth-of-type(2) { background: linear-gradient(135deg, #f7971e, #ffd200); }
+.card:nth-of-type(3) { background: linear-gradient(135deg, #ff6a00, #ee0979); }
+.card:nth-of-type(4) { background: linear-gradient(135deg, #56ccf2, #2f80ed); }
+
+.card:hover {
+    transform: translateY(-5px);
 }
 
-.card:hover{
-transform:translateY(-6px) scale(1.03);
-box-shadow:0 15px 30px rgba(0,0,0,0.4);
+.error-message {
+    color: #ff4d4d;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    height: 20px;
 }
 
-.error-message{
-color:#ff4d4d;
-text-align:center;
-font-weight:bold;
-min-height:18px;
+@media (max-width: 370px) {
+    .header {
+        padding: 15px;
+        min-height: auto;
+    }
+    .details-container {
+        gap: 10px;
+    }
+    .card span:last-child {
+        font-size: 1rem;
+    }
 }
 
-@media(max-width:500px){
-
-.header{
-padding:22px;
+@media (min-width: 768px) {
+    .header {
+        max-width: 500px;
+        min-height: 700px;
+    }
 }
 
-.temperature{
-font-size:40px;
+@media (max-height: 600px) {
+    body {
+        align-items: flex-start;
+    }
+    .header {
+        min-height: auto;
+        margin-top: 20px;
+    }
 }
 
-.card{
-font-size:14px;
-}
-
+@media (prefers-reduced-motion: reduce) {
+    body { animation: none; }
+    .card:hover, .submit:hover { transform: none; }
 }
