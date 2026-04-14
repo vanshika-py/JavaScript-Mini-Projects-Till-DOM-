@@ -53,7 +53,6 @@ inputCity.addEventListener("input", () => {
 
         cityName.innerText = "";
         temperature.innerText = "";
-        condition.innerText = "";
         icon.innerText = "";
 
         humidity.innerText = "";
