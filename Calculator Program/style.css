@@ -3,11 +3,126 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.heading{
+    font-size: clamp(22px, 4vw, 35px);
+    text-align: center;
+    margin: 20px 0;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    flex-direction: column; 
+    margin: 20px auto;
+}
+
+.main{
+    width: 100%;
+    max-width: 350px;
+    padding: 15px;
+    background: #222;
+    border-radius: 12px;
+}
+
+
+.sections{
+    display: flex;
+    flex-direction: column; 
+}
+
+
+.sections span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: clamp(50px, 8vw, 70px);
+    font-size: 20px;
+    background: #333;
+    color: white;
+    border-radius: 8px;
+    padding: 25px; 
+    margin: 10px auto;
+}
+
+.first-section,
+.second-section,
+.third-section,
+.fourth-section,
+.fifth-section{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); 
+    gap: 10px;
+}
+
+.first-section span{
+    background-color: orangered;
+}
+
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
     
 .heading{
     font-size: 30px;  
 } 
 
+
+.container{
+    
+    display: flex;
+    align-items: center;
+    width: 90%;
+    max-width: 70%;
+    margin : 15px auto;
+    height: 650px;
+}
+
+
+
+.main{
+
+ display: flex;
+ justify-content: center;
+ align-items: center;
+   height: 500px;
+   width: 900px;
+   margin: 20px;
+   padding: 40px;
+   flex-direction: row;
+   
+}
+
+.sections{
+background-color: orangered;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.sections span{
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   flex-direction: row;  
+   color: white;
+   font-size: 25px;
+   margin: 20px;
+   padding: 18px;
+   border: 2px solid white;
+   border-radius: 50%;
+}
+
+
+/* 
 .container{
     height: 80vh;
     width: clamp(320px, 90%, 900px);
@@ -38,6 +153,6 @@ background-color: pink;
     width: 20%;
     border: 3px solid black;
     margin: 0 auto;
-}
+} */
 
-
+ */
