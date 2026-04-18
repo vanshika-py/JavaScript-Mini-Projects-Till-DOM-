@@ -60,6 +60,22 @@
 .first-section span{
     background-color: orangered;
 }
+.spacebar{
+    width: 100%;
+    height: clamp(60px, 10vw, 80px);
+    background: #111;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    padding: 10px;
+    font-size: 24px;
+    overflow: hidden;
+}
 
 
 /* *{
